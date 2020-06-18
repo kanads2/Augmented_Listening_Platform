@@ -1,0 +1,23 @@
+IP Ports Diff Report for soc_system
+Tue Jun  2 17:07:31 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++----------------------------------------------------------+
+; IP Information                                           ;
++----------------------+-----------------------------------+
+; IP Variation Name    ; soc_system                        ;
+; Prior Version        ; ACDS_v16.0                        ;
+; New Version          ; ACDS_v19.1                        ;
+; New File             ; soc_system/synthesis/soc_system.v ;
+; Has Port Differences ; No                                ;
++----------------------+-----------------------------------+
+
+

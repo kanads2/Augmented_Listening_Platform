@@ -1,0 +1,17 @@
+Partition Merge Status : Successful - Mon Jun  1 16:12:14 2020
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+Revision Name : soc_system
+Top-level Entity Name : ghrd_top
+Family : Cyclone V
+Logic utilization (in ALMs) : 4,210 / 32,070 ( 13 % )
+Total registers : 6280
+Total pins : 368 / 457 ( 81 % )
+Total virtual pins : 0
+Total block memory bits : 657,408 / 4,065,280 ( 16 % )
+Total DSP Blocks : 0 / 87 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1 / 6 ( 17 % )
+Total DLLs : 1 / 4 ( 25 % )

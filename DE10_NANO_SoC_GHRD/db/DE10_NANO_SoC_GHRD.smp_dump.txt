@@ -1,0 +1,55 @@
+
+State Machine - |DE10_NANO_SoC_GHRD|altera_edge_detector:pulse_debug_reset|state
+Name state.IDLE state.CAPT state.ARM 
+state.IDLE 0 0 0 
+state.ARM 1 0 1 
+state.CAPT 1 1 0 
+
+State Machine - |DE10_NANO_SoC_GHRD|altera_edge_detector:pulse_warm_reset|state
+Name state.IDLE state.CAPT state.ARM 
+state.IDLE 0 0 0 
+state.ARM 1 0 1 
+state.CAPT 1 1 0 
+
+State Machine - |DE10_NANO_SoC_GHRD|altera_edge_detector:pulse_cold_reset|state
+Name state.IDLE state.CAPT state.ARM 
+state.IDLE 0 0 0 
+state.ARM 1 0 1 
+state.CAPT 1 1 0 
+
+State Machine - |DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:mm_bridge_0_s0_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |DE10_NANO_SoC_GHRD|soc_system:u0|avalon_microphone_system:avalon_microphone_system_0|mic_dma:dma_yo|state
+Name state.FIN state.WD_X state.LD_X state.WAITDATA2 state.WAITDATA state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.WAITDATA 0 0 0 0 1 1 
+state.WAITDATA2 0 0 0 1 0 1 
+state.LD_X 0 0 1 0 0 1 
+state.WD_X 0 1 0 0 0 1 
+state.FIN 1 0 0 0 0 1 
+
+State Machine - |DE10_NANO_SoC_GHRD|soc_system:u0|interrupt_latency_counter:ilc|state_machine_counter:state_machine[2].state_machine_counter|state
+Name state.STORE state.STOP state.START state.IDLE 
+state.IDLE 0 0 0 0 
+state.START 0 0 1 1 
+state.STOP 0 1 0 1 
+state.STORE 1 0 0 1 
+
+State Machine - |DE10_NANO_SoC_GHRD|soc_system:u0|interrupt_latency_counter:ilc|state_machine_counter:state_machine[1].state_machine_counter|state
+Name state.STORE state.STOP state.START state.IDLE 
+state.IDLE 0 0 0 0 
+state.START 0 0 1 1 
+state.STOP 0 1 0 1 
+state.STORE 1 0 0 1 
+
+State Machine - |DE10_NANO_SoC_GHRD|soc_system:u0|interrupt_latency_counter:ilc|state_machine_counter:state_machine[0].state_machine_counter|state
+Name state.STORE state.STOP state.START state.IDLE 
+state.IDLE 0 0 0 0 
+state.START 0 0 1 1 
+state.STOP 0 1 0 1 
+state.STORE 1 0 0 1 

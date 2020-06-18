@@ -1,0 +1,17 @@
+Partition Merge Status : Successful - Thu Jun  4 16:46:57 2020
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+Revision Name : DE10_NANO_SoC_GHRD
+Top-level Entity Name : DE10_NANO_SoC_GHRD
+Family : Cyclone V
+Logic utilization (in ALMs) : 4,428 / 41,910 ( 11 % )
+Total registers : 6963
+Total pins : 204 / 314 ( 65 % )
+Total virtual pins : 0
+Total block memory bits : 2,835,712 / 5,662,720 ( 50 % )
+Total DSP Blocks : 0 / 112 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1 / 6 ( 17 % )
+Total DLLs : 1 / 4 ( 25 % )

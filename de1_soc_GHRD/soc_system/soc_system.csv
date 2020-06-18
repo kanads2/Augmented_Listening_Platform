@@ -1,0 +1,33 @@
+# system info soc_system on 2020.05.31.16:22:23
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1590960136
+#
+#
+# Files generated for soc_system on 2020.05.31.16:22:23
+files:
+filepath,kind,attributes,module,is_top
+simulation/soc_system.v,VERILOG,,soc_system,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+soc_system.button_pio,soc_system_button_pio
+soc_system.dipsw_pio,soc_system_dipsw_pio
+soc_system.hps_0,soc_system_hps_0
+soc_system.intr_capturer_0,intr_capturer
+soc_system.jtag_uart,soc_system_jtag_uart
+soc_system.led_pio,soc_system_led_pio
+soc_system.master_non_sec,soc_system_master_non_sec
+soc_system.master_secure,soc_system_master_non_sec
+soc_system.onchip_memory2_0,soc_system_onchip_memory2_0
+soc_system.sysid_qsys,soc_system_sysid_qsys
+soc_system.mm_interconnect_0,soc_system_mm_interconnect_0
+soc_system.mm_interconnect_1,soc_system_mm_interconnect_1
+soc_system.irq_mapper,soc_system_irq_mapper
+soc_system.irq_mapper_002,soc_system_irq_mapper
+soc_system.irq_mapper_001,soc_system_irq_mapper_001
+soc_system.rst_controller,altera_reset_controller
+soc_system.rst_controller_001,altera_reset_controller

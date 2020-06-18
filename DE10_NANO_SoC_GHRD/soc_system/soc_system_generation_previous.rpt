@@ -1,0 +1,196 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system.qsys --block-symbol-file --output-directory=/home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading DE10_NANO_SoC_GHRD/soc_system.qsys
+Progress: Reading input file
+Progress: Adding ILC [interrupt_latency_counter 19.1]
+Progress: Parameterizing module ILC
+Progress: Adding aud_lrclk [intel_up_avalon_audio_clks 18.0]
+Progress: Parameterizing module aud_lrclk
+Progress: Adding aud_lrclk1 [intel_up_avalon_audio_clks 18.0]
+Progress: Parameterizing module aud_lrclk1
+Progress: Adding avalon_microphone_system_0 [avalon_microphone_system 1.0]
+Progress: Parameterizing module avalon_microphone_system_0
+Progress: Adding bclk_pll [altera_pll 19.1]
+Progress: Parameterizing module bclk_pll
+Progress: Adding button_pio [altera_avalon_pio 19.1]
+Progress: Parameterizing module button_pio
+Progress: Adding clk_0 [clock_source 19.1]
+Progress: Parameterizing module clk_0
+Progress: Adding dipsw_pio [altera_avalon_pio 19.1]
+Progress: Parameterizing module dipsw_pio
+Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 19.1]
+Progress: Parameterizing module f2sdram_only_master
+Progress: Adding fpga_only_master [altera_jtag_avalon_master 19.1]
+Progress: Parameterizing module fpga_only_master
+Progress: Adding hps_0 [altera_hps 19.1]
+Progress: Parameterizing module hps_0
+Progress: Adding hps_only_master [altera_jtag_avalon_master 19.1]
+Progress: Parameterizing module hps_only_master
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 19.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding led_pio [altera_avalon_pio 19.1]
+Progress: Parameterizing module led_pio
+Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 19.1]
+Progress: Parameterizing module mm_bridge_0
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 19.1]
+Progress: Parameterizing module sysid_qsys
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.bclk_pll: The legal reference clock frequency is 50.0 MHz..700.0 MHz
+Info: soc_system.bclk_pll: Able to implement PLL with user settings
+Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: soc_system.hps_0: Setting the slave port width of interface f2h_sdram0 to 32 results in bandwidth under-utilization.  Altera recommends you set the interface data width to 64-bit or greater.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system.qsys --synthesis=VERILOG --output-directory=/home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading DE10_NANO_SoC_GHRD/soc_system.qsys
+Progress: Reading input file
+Progress: Adding ILC [interrupt_latency_counter 19.1]
+Progress: Parameterizing module ILC
+Progress: Adding aud_lrclk [intel_up_avalon_audio_clks 18.0]
+Progress: Parameterizing module aud_lrclk
+Progress: Adding aud_lrclk1 [intel_up_avalon_audio_clks 18.0]
+Progress: Parameterizing module aud_lrclk1
+Progress: Adding avalon_microphone_system_0 [avalon_microphone_system 1.0]
+Progress: Parameterizing module avalon_microphone_system_0
+Progress: Adding bclk_pll [altera_pll 19.1]
+Progress: Parameterizing module bclk_pll
+Progress: Adding button_pio [altera_avalon_pio 19.1]
+Progress: Parameterizing module button_pio
+Progress: Adding clk_0 [clock_source 19.1]
+Progress: Parameterizing module clk_0
+Progress: Adding dipsw_pio [altera_avalon_pio 19.1]
+Progress: Parameterizing module dipsw_pio
+Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 19.1]
+Progress: Parameterizing module f2sdram_only_master
+Progress: Adding fpga_only_master [altera_jtag_avalon_master 19.1]
+Progress: Parameterizing module fpga_only_master
+Progress: Adding hps_0 [altera_hps 19.1]
+Progress: Parameterizing module hps_0
+Progress: Adding hps_only_master [altera_jtag_avalon_master 19.1]
+Progress: Parameterizing module hps_only_master
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 19.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding led_pio [altera_avalon_pio 19.1]
+Progress: Parameterizing module led_pio
+Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 19.1]
+Progress: Parameterizing module mm_bridge_0
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 19.1]
+Progress: Parameterizing module sysid_qsys
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.bclk_pll: The legal reference clock frequency is 50.0 MHz..700.0 MHz
+Info: soc_system.bclk_pll: Able to implement PLL with user settings
+Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: soc_system.hps_0: Setting the slave port width of interface f2h_sdram0 to 32 results in bandwidth under-utilization.  Altera recommends you set the interface data width to 64-bit or greater.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master avalon_microphone_system_0.avalon_master and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 30 bit wide.
+Info: Interconnect is inserted between master avalon_microphone_system_0.avalon_master and slave hps_0.f2h_sdram0_data because the master has burstcount signal 3 bit wide, but the slave is 8 bit wide.
+Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave mm_bridge_0.s0 because the master is of type axi and the slave is of type avalon.
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper_001.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper_001.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_002.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_002.sender
+Info: ILC: "soc_system" instantiated interrupt_latency_counter "ILC"
+Info: aud_lrclk: Starting Generation of Audio LR Clock
+Info: aud_lrclk: "soc_system" instantiated intel_up_avalon_audio_clks "aud_lrclk"
+Info: avalon_microphone_system_0: "soc_system" instantiated avalon_microphone_system "avalon_microphone_system_0"
+Info: bclk_pll: "soc_system" instantiated altera_pll "bclk_pll"
+Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
+Info: button_pio:   Generation command is [exec /home/john/intelFPGA/19.1/quartus/linux64/perl/bin/perl -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin/europa -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=/tmp/alt8417_2655119229241094203.dir/0050_button_pio_gen/ --quartus_dir=/home/john/intelFPGA/19.1/quartus --verilog --config=/tmp/alt8417_2655119229241094203.dir/0050_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
+Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
+Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
+Info: dipsw_pio:   Generation command is [exec /home/john/intelFPGA/19.1/quartus/linux64/perl/bin/perl -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin/europa -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=/tmp/alt8417_2655119229241094203.dir/0051_dipsw_pio_gen/ --quartus_dir=/home/john/intelFPGA/19.1/quartus --verilog --config=/tmp/alt8417_2655119229241094203.dir/0051_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
+Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
+Info: hps_0: "Running  for module: hps_0"
+Warning: hps_0: Setting the slave port width of interface f2h_sdram0 to 32 results in bandwidth under-utilization.  Altera recommends you set the interface data width to 64-bit or greater.
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /home/john/intelFPGA/19.1/quartus/linux64/perl/bin/perl -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin/europa -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt8417_2655119229241094203.dir/0052_jtag_uart_gen/ --quartus_dir=/home/john/intelFPGA/19.1/quartus --verilog --config=/tmp/alt8417_2655119229241094203.dir/0052_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
+Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
+Info: led_pio:   Generation command is [exec /home/john/intelFPGA/19.1/quartus/linux64/perl/bin/perl -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin/europa -I /home/john/intelFPGA/19.1/quartus/sopc_builder/bin -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/john/intelFPGA/19.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=/tmp/alt8417_2655119229241094203.dir/0053_led_pio_gen/ --quartus_dir=/home/john/intelFPGA/19.1/quartus --verilog --config=/tmp/alt8417_2655119229241094203.dir/0053_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
+Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
+Info: mm_bridge_0: "soc_system" instantiated altera_avalon_mm_bridge "mm_bridge_0"
+Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_2: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
+Info: irq_mapper_002: "soc_system" instantiated altera_irq_mapper "irq_mapper_002"
+Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: avalon_microphone_system_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "avalon_microphone_system_0_avalon_master_translator"
+Info: hps_0_f2h_sdram0_data_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "hps_0_f2h_sdram0_data_translator"
+Info: avalon_microphone_system_0_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "avalon_microphone_system_0_avalon_master_agent"
+Info: hps_0_f2h_sdram0_data_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "hps_0_f2h_sdram0_data_agent"
+Info: hps_0_f2h_sdram0_data_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "hps_0_f2h_sdram0_data_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_1" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: mm_bridge_0_s0_burst_adapter: "mm_interconnect_1" instantiated altera_merlin_burst_adapter "mm_bridge_0_s0_burst_adapter"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
+Info: mm_bridge_0_m0_limiter: "mm_interconnect_2" instantiated altera_merlin_traffic_limiter "mm_bridge_0_m0_limiter"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/john/Code/augmented_listening_sum2020/DE10_NANO_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 49 modules, 110 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
