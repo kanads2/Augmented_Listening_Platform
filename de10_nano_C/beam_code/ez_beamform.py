@@ -56,22 +56,25 @@ def beamformer_binaural(target_ir, noise ):
 
     #Fourier transform for noise and intereferences
     Hi = None
-    
-    if(len(noise.shape) >2 or noise.shape[0] <= ir_len): # It should enter here for interference suppression
-        Hi = np.fft.fft(noise,n = dft_len, axis = 0)
-        Hi = np.swapaxes(Hi, 0,1)
-        Hi = np.swapaxes(Hi, 1,2)
-        Hi = Hi/(np.sqrt(np.mean(np.sum(np.mean(np.abs(Hi) **2, axis = 0), axis = 0))))
-    else: #it should enter here for noise suppression
-        Hi = multiple_stft(noise, dft_len)
-        Hi = np.concatenate((Hi,np.conj(np.flip(Hi[:,:,1:ir_len], axis =2))), axis = 2)
-        Hi = Hi[:,:]/np.sqrt(np.sum(np.mean(np.abs(Hi)**2, axis = 0), axis = 0))
+    if(len(noise.shape) == 1):
+    	for f in range(dft_len):
+        	C[:,:,f] = np.identity(num_channels);
 
+    else:
+    	if(len(noise.shape) >2 or noise.shape[0] <= ir_len): # It should enter here for interference suppression
+        	Hi = np.fft.fft(noise,n = dft_len, axis = 0)
+        	Hi = np.swapaxes(Hi, 0,1)
+        	Hi = np.swapaxes(Hi, 1,2)
+        	Hi = Hi/(np.sqrt(np.mean(np.sum(np.mean(np.abs(Hi) **2, axis = 0), axis = 0))))
+    	else: #it should enter here for noise suppression
+        	Hi = multiple_stft(noise, dft_len)
+        	Hi = np.concatenate((Hi,np.conj(np.flip(Hi[:,:,1:ir_len], axis =2))), axis = 2)
+        	Hi = Hi[:,:]/np.sqrt(np.sum(np.mean(np.abs(Hi)**2, axis = 0), axis = 0))
 
-    for f in range(dft_len):
-        a = np.matrix(Hi[:,:,f])
-        C[:,:,f] = np.matmul(a, a.H) 
-        C[:,:,f] = C[:,:,f] + DIAGONAL_LOADING*np.identity(num_channels);
+    	for f in range(dft_len):
+	        a = np.matrix(Hi[:,:,f])
+    	    C[:,:,f] = np.matmul(a, a.H) 
+        	C[:,:,f] = C[:,:,f] + DIAGONAL_LOADING*np.identity(num_channels);
 
     '''
     # This is for NON-BINAURAL

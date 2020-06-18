@@ -57,31 +57,20 @@
 #define BINAURAL 2
 #define NOISE_LEN 1440001
 
+
 using namespace std;
 
 int main()
 {
     setenv("PYTHONPATH",".",1); // Required to find the proper module
-    float * target_ir = new float [NUM_SOURCES * NUM_COEF];
+    float * target_ir = generate_Target('T');
     float * noise = new float [NUM_SOURCES * NOISE_LEN]; 
     double filter [NUM_COEF][NUM_SOURCES][BINAURAL][NUM_OUTPUT]; // python float is a c double, filter coefficients
     npy_intp tar_dims[3] = { NUM_COEF, NUM_SOURCES, NUM_OUTPUT }; //target irs will be three dimensions 
     npy_intp noise_dims[2] = { NOISE_LEN, NUM_SOURCES }; // noise will be in 2 dimensions
     PyObject* coefficient; // pointer for the coefficent array in python
 
-    /* Generating the array holding the target data for txt*/
-    ifstream target_file;
-    target_file.open("target_ir.txt");
-    if (!target_file) {
-        cout << "Unable to open file";
-        exit(1); // terminate with error
-    }
-     for (int i = 0; i < NUM_COEF; i++) {
-        for (int j = 0; j < NUM_SOURCES; j++) {
-            target_file >> target_ir[NUM_SOURCES * i + j];
-        }
-    }   
-    target_file.close();
+    
 
     /* Generating the array holding the noise data for txt*/
     ifstream noise_file;
@@ -180,5 +169,44 @@ int main()
     Py_Finalize(); // Required for the C-Python API
     
     return 0;
+
+}
+
+float * generate_Target(char mode)
+{
+    if(mode == 'T')
+    {
+        float * target_ir = new float [NUM_SOURCES * NUM_COEF];
+
+        /* Generating the array holding the target data for txt*/
+        ifstream target_file;
+        target_file.open("target_ir.txt");
+        if (!target_file) {
+            cout << "Unable to open file";
+            exit(1); // terminate with error
+        }
+        for (int i = 0; i < NUM_COEF; i++) {
+            for (int j = 0; j < NUM_SOURCES; j++) {
+                target_file >> target_ir[NUM_SOURCES * i + j];
+            }
+        }   
+        target_file.close();
+        return target_ir;
+
+
+    }
+    else if(mode == 'M')
+    {
+        return 0;
+        // TODO: use dev mem
+    }
+    else
+    {
+        cout << "Please select a legitimate mode for target" << endl;
+        exit(1);
+    }
+}
+float * generate_Noise()
+{
 
 }
