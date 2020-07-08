@@ -47,6 +47,7 @@
 
 #include <iostream>
 #include <fstream> 
+#define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include <numpy/arrayobject.h>
@@ -56,35 +57,35 @@
 #define NUM_SOURCES 8
 #define BINAURAL 2
 #define NOISE_LEN 1440001
-
-
 using namespace std;
+//static const char TARGET_MODE = 'T';
+//static const char NOISE_MODE = 'Z';
+
+float * generate_Noise();
+float * generate_Target();
 
 int main()
 {
-    setenv("PYTHONPATH",".",1); // Required to find the proper module
-    float * target_ir = generate_Target('T');
-    float * noise = new float [NUM_SOURCES * NOISE_LEN]; 
+    setenv("PYTHONPATH","/home/john/ALP/de10_nano_C/beam_code",1); // Required to find the proper module
+    float * target_ir = generate_Target();
+    float * noise = generate_Noise();
     double filter [NUM_COEF][NUM_SOURCES][BINAURAL][NUM_OUTPUT]; // python float is a c double, filter coefficients
+
+
+    /*switch (TARGET_MODE)
+    {
+        case
+
+    }*/
+
     npy_intp tar_dims[3] = { NUM_COEF, NUM_SOURCES, NUM_OUTPUT }; //target irs will be three dimensions 
-    npy_intp noise_dims[2] = { NOISE_LEN, NUM_SOURCES }; // noise will be in 2 dimensions
+    //npy_intp noise_dims[2] = { NOISE_LEN, NUM_SOURCES }; // noise will be in 2 dimensions
+    npy_intp noise_dims[1] = {1};
     PyObject* coefficient; // pointer for the coefficent array in python
 
     
 
-    /* Generating the array holding the noise data for txt*/
-    ifstream noise_file;
-    noise_file.open("noise.txt");
-    if (!noise_file) {
-        cout << "Unable to open file";
-        exit(1); // terminate with error
-    }  
-    for (int i = 0; i < NOISE_LEN; i++) {
-        for (int j = 0; j < NUM_SOURCES; j++) {
-            noise_file >> noise[NUM_SOURCES * i + j];
-        }
-    }   
-    noise_file.close();
+
 
    
     
@@ -102,6 +103,7 @@ int main()
     if(pModule == NULL)
     {
         cout << "unable to find the python module, set the PYTHONPATH" << endl;
+        PyErr_Print();
         exit(1);
     }
 
@@ -118,7 +120,7 @@ int main()
 
     // These lines create Pythonic arrays off of our C arrays and then creates our args for the py func
     PyObject* targ_array = PyArray_SimpleNewFromData(3, tar_dims, NPY_FLOAT, target_ir);
-    PyObject* noise_array = PyArray_SimpleNewFromData(2, noise_dims, NPY_FLOAT, noise); 
+    PyObject* noise_array = PyArray_SimpleNewFromData(1, noise_dims, NPY_FLOAT, noise); 
     PyObject* pArgs = PyTuple_New (2);
     PyTuple_SetItem (pArgs, 0, targ_array);
     PyTuple_SetItem (pArgs, 1, noise_array);
@@ -147,12 +149,12 @@ int main()
     {
         cout << "Function is not callable !" << endl;
     }
-    
+    //
     // Required for reference counting, will seg fault if misused and is very hard to debug
     Py_DECREF(pName);
     Py_DECREF (targ_array);  
     Py_DECREF (noise_array);
-    Py_DECREF (pArgs); 
+    //Py_DECREF (pArgs); 
     Py_DECREF (pModule);
     Py_DECREF (pDict);
     Py_DECREF (pFunc);
@@ -161,21 +163,22 @@ int main()
     delete[] noise;
     delete[](target_ir);
     
-    /*// This is for verifying that my local array has the python output
+    // This is for verifying that my local array has the python output
     cout.precision(16);
     cout << filter[1025][5][1][0] << endl;
-    */
     
-    Py_Finalize(); // Required for the C-Python API
+    Py_Finalize(); 
+    // Required for the C-Python API
     
     return 0;
 
 }
 
-float * generate_Target(char mode)
+float * generate_Target()
 {
-    if(mode == 'T')
-    {
+
+    //if(TARGET_MODE == 'T')
+    //{
         float * target_ir = new float [NUM_SOURCES * NUM_COEF];
 
         /* Generating the array holding the target data for txt*/
@@ -194,8 +197,8 @@ float * generate_Target(char mode)
         return target_ir;
 
 
-    }
-    else if(mode == 'M')
+    /*}
+    else if(TARGET_MODE == 'M')
     {
         return 0;
         // TODO: use dev mem
@@ -204,9 +207,38 @@ float * generate_Target(char mode)
     {
         cout << "Please select a legitimate mode for target" << endl;
         exit(1);
-    }
+    }*/
 }
 float * generate_Noise()
 {
-
+   /* if(NOISE_MODE == 'N')
+    {
+        float * noise = new float [NUM_SOURCES * NOISE_LEN]; */
+        /* Generating the array holding the noise data for txt*/
+    /*    ifstream noise_file;
+        noise_file.open("noise.txt");
+        if (!noise_file) {
+            cout << "Unable to open file";
+            exit(1); // terminate with error
+        }  
+        for (int i = 0; i < NOISE_LEN; i++) {
+            for (int j = 0; j < NUM_SOURCES; j++) {
+                noise_file >> noise[NUM_SOURCES * i + j];
+            }
+        }   
+        noise_file.close();
+        return noise;
+    }*/
+   // else if(NOISE_MODE == 'Z')
+    //{
+        float * noise = new float[1];
+        noise[0] = 1;
+        return noise;
+        
+   /* }
+    else
+    {
+        cout << "Please select a legitimate mode for target" << endl;
+        exit(1);
+    }*/
 }

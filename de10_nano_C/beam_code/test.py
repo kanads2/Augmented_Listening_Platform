@@ -18,7 +18,7 @@ np.savetxt("noise.txt", noise)
 
 #np.savetxt()
 #test_1 = ez.beamformer_binaural(target_ir, interference_irs)
-test_2 = ez.beamformer_binaural(target_ir, noise)
+test_2 = ez.beamformer_binaural(target_ir, 1)
    
 #sio.savemat("/Users/kanadsarkar/ECE/audio/beam.mat", {'beamformer1_py': test_1 , 'beamformer2_py': test_2})
 
